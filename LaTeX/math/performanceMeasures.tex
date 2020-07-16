@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Performance Measures}
+\author{Yannick Bijl}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+
+\section{Mean Squared Error}
+The Mean Squared Error (RMSE) compares the predicted model \textit{A} against a reference \textit{B}. \textit{A} and \textit{B} need to be of the same length. The MSE represents the difference between the two prediction and the reference. Important to note is that \textit{n} is the number of items in the models.
+
+\begin{equation}
+    \label{eq:mse}
+    MSE(A, B) = \frac{1}{n} \sum_{i=1}^{n} ||A_i - B_i||^2
+\end{equation}
+
+\section{Root Mean Squared Error}
+The Root Mean Squared Error (RMSE) compares the predicted model \textit{A} against a reference \textit{B}, similar to the MSE. \textit{A} and \textit{B} need to be of the same length. The RMSE represents the standard deviation of the difference between the two. Important to note is that \textit{n} is the number of items in the models. The Root Mean Squared Error is also often called the Root Mean Squared Deviation (RMSD).
+
+\begin{equation}
+    \label{eq:rmse}
+    RMSE(A, B) = \sqrt{\frac{1}{n} \sum_{i=1}^{n} ||A_i - B_i||^2}
+\end{equation}
+
+\section{Interaction Network Fidelity}
+The Interaction Network Fidelity (INF) is calculated as the root of the specificity between \textit{A} and \textit{B} times sensitivity between \textit{A} and \textit{B}. \textit{TP} = True Positive; \textit{FP} = False Positive; \textit{FN} = False Negative.
+
+\begin{equation}
+    \label{eq:inf}
+    INF(A, B) = \sqrt{Specificity * Sensitivity} = \sqrt{\frac{|TP|}{|TP| + |FP|} * \frac{|TP|}{|TP| + |FN|}}
+\end{equation}
+
+\section{Deformation Index}
+The Deformation Index (DI)is a ratio between the RMSD and INF. Thus it is quite simple to calculate once the other two are known. The DI should be seen as an additional measurement that needs to be used in conjunction with the RMSD and INF, as it relies on them.
+
+\begin{equation}
+    \label{eq:di}
+    DI(A, B) = \frac{RMSE(A, B)}{INF(A, B)}
+\end{equation}
+
+\end{document}

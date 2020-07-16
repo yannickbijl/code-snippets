@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tasks}
+
+\title{Lists}
+\author{Yannick Bijl}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Itemize}
+\begin{itemize}
+    \item item1
+    \item item2
+\end{itemize}
+
+\section{Enumerate}
+\begin{enumerate}
+    \item item1
+    \item item2
+\end{enumerate}
+
+\section{Description}
+\begin{description}
+    \item [x] item1
+    \item [y] item2
+\end{description}
+
+\section{Nested}
+This works for any list type. Enumerate changes ordering type (arabic numbers, letters, roman numbers). Itemize on the other hand changes the type of bullets used.
+ 
+\begin{enumerate}
+    \item The first item
+  \begin{enumerate}
+      \item Nested item 1
+      \item Nested item 2
+  \end{enumerate}
+    \item The second item
+    \item The third etc \ldots
+\end{enumerate}
+
+\section{Tasks\/Horizontal}
+Requires the package \textit{tasks}. \textit{(x)} denotes the number of items to be placed next to each other.
+
+\begin{tasks}(2)
+	\task item1
+    \task item2
+    \task item3
+\end{tasks}
+
+\begin{tasks}(3)
+	\task item1
+    \task item2
+    \task item3
+\end{tasks}
+
+\end{document}
